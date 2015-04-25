@@ -9,7 +9,7 @@ Techs and Assets Involved
  - Gulp
  - Browserify
  - Jquery
- - BootstrapJS
+ - Bootstrap
  - Handlebars
  - Sass
  - Font Awesome
