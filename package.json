@@ -1,5 +1,5 @@
 {
-  "name": "transportesjebar",
+  "name": "gulp-setup",
   "version": "0.0.1",
   "description": "this is the package dependencies for the project",
   "main": "gulpfile.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://wbarahona@bitbucket.org/wbarahona/transportesjebar.git"
+    "url": "https://github.com/wbarahona/gulp-setup"
   },
   "keywords": [
     "transportes",
