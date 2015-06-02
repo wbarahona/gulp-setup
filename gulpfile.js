@@ -14,7 +14,8 @@ var gulp                = require('gulp'),
     browserify          = require('browserify'),
     handlebars          = require('gulp-compile-handlebars'),
     templObj            = require('./conf/web.conf'),
-    pathObj             = require('./conf/paths.conf');
+    pathObj             = require('./conf/paths.conf'),
+    buffer              = require('vinyl-buffer');
 
 var paths = pathObj,
     templateData = templObj;
@@ -82,6 +83,8 @@ gulp.task('scripts', function() {
         entries: [paths.dev.scripts+'/scripts.js']
     }).bundle()
     .pipe(source('scripts.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.dist.scripts))
     .pipe(connect.reload());
 });
