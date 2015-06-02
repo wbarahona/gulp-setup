@@ -69,9 +69,9 @@ module.exports = {
         },
         menu: [
                 {title: 'Home', url: '/'},
-                {title: 'Our Work', url: '/our-work'},
-                {title: 'About Us', url: '/about-us'},
-                {title: 'Contact Us', url: '/contact'}
+                {title: 'Project A', url: '/projects/project-a.html'},
+                {title: 'About Us', url: 'about.html'},
+                {title: 'Contact Us', url: '/contact/'}
         ],
         socialurl: {
             facebook: '',

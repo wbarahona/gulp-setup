@@ -71,13 +71,6 @@ gulp.task('lint', function() {
 gulp.task('scripts', function() {
     // Minify and copy all JavaScript
     // with sourcemaps all the way down
-    // return gulp.src(paths.dev.scripts)
-    // .pipe(sourcemaps.init())
-    // .pipe(uglify())
-    // .pipe(concat('scripts.min.js'))
-    // .pipe(sourcemaps.write())
-    // .pipe(gulp.dest(paths.dist.scripts))
-    // .pipe(connect.reload());
     return browserify({
         debug: true,
         entries: [paths.dev.scripts+'/scripts.js']
@@ -101,9 +94,11 @@ gulp.task('hbs', function () {
         }
     }
 
-    return gulp.src(paths.dev.hbs.root+'/index.hbs')
+    return gulp.src([paths.dev.hbs.root+'/**/*.hbs', '!'+paths.dev.hbs.root+'/partials/**/*.hbs'])
     .pipe(handlebars(templateData, options))
-    .pipe(rename('index.html'))
+    .pipe(rename(function(path) {
+        path.extname = '.html';
+    }))
     .pipe(gulp.dest(paths.dist.root))
     .pipe(connect.reload());
 });
@@ -144,7 +139,6 @@ gulp.task('sass', function () {
     .pipe(concat('styles.min.css'))
     .pipe(gulp.dest(paths.dist.styles))
     .pipe(minifyCSS())
-    // .pipe(sourcemaps.write())
     .pipe(rename('styles.min.css'))
     .pipe(gulp.dest(paths.dist.styles))
     .pipe(connect.reload());
@@ -167,4 +161,4 @@ gulp.task('watch', function() {
 // $ gulp et voila
 // ---------------------------------------------------------------------------------------------------------------
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['lint', 'scripts', 'hbs', 'fonts','images', 'sass', 'express', 'livereload', 'connect', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'hbs', 'fonts', 'images', 'sass', 'express', 'livereload', 'connect', 'watch']);
