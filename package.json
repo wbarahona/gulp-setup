@@ -11,11 +11,12 @@
     "url": "https://github.com/wbarahona/gulp-setup"
   },
   "keywords": [
-    "transportes",
-    "jebar",
-    "king",
-    "of",
-    "transport"
+    "gulpjs",
+    "gulp",
+    "bootstrap",
+    "browserify",
+    "handlebars",
+    "jquery"
   ],
   "author": "Willmer Barahona",
   "license": "ISC",
