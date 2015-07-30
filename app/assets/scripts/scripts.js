@@ -3,11 +3,13 @@
 
     // Dependencies
     var $               = require('jquery'),
-        bootstrap       = require('bootstrap');
+        material        = require('material'),
+        listeners       = require('./modules/listeners');
 
         // Start all events here
         function init () {
             // Here below all inits you need
+            listeners.init();
         }
 
         $('document').ready(function () {

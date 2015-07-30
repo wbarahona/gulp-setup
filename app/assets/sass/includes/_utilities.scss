@@ -8,3 +8,13 @@
         .ib, .inlineBlock, .inline-block {
             @include inlineBlock();
         }
+
+    //
+    // Float Right
+    // ------------------------------------------------------------------
+        .fr, .flt-r {float: right;}
+
+    //
+    // Float Left
+    // ------------------------------------------------------------------
+        .fl, .flt-l {float: left;}

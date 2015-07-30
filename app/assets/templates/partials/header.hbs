@@ -1,11 +1,32 @@
-<header>
-    <div class="content">
-        <h1>{{site.business.companyname}}</h1>
-        <h2>{{site.business.catchphrase}}</h2>
+<header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">{{site.business.companyname}}</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation -->
+        {{> mainmenu}}
+        {{> menu-search}}
     </div>
-    {{> mainmenu}}
-    <div class="alert alert-warning alert-dismissible" role="alert">
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#fixed-tab-1" class="mdl-layout__tab is-active"><i class="fa fa-ge"></i></a>
+        <a href="#fixed-tab-2" class="mdl-layout__tab"><i class="fa fa-group"></i></a>
+        <a href="#fixed-tab-3" class="mdl-layout__tab"><i class="fa fa-comments"></i></a>
+    </div>
+    {{!-- <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Warning!</strong> Better check yourself, you're not looking too good.
-    </div>
+    </div> --}}
 </header>
+{{!-- Menu on click burger button --}}
+<div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">{{site.business.companyname}}</span>
+    <nav class="mdl-navigation mdl-layout--small-screen-only">
+        <ul class="">
+            {{#each site.menu}}
+                <li><a href="{{this.url}}" class="mdl-navigation__link">{{this.title}}</a></li>
+            {{/each}}
+        </ul>
+    </nav>
+</div>

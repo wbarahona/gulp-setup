@@ -1,11 +1,37 @@
-.alert {
+main {position: relative;}
+.mdl-layout__header-row nav li {
+    @include inlineBlock;
+}
+.float-btn {
     position: absolute;
-    width: 100%;
-    top: 0;
-    left:0;
+    right: 1%;
+    bottom: 1%;
+}
+.content {
+    margin-left: auto;
+    margin-right: auto;
+}
+.toast {
+    @include transition(all 0.3s ease-in-out);
     z-index: 9999;
+    bottom: -1%;
+    left: 1%;
+    position: absolute;
+    display: inline-block;
+    max-width: 170px;
+    opacity: 0;
+    padding: 0 16px;
+    font-weight: 500;
+    // font-size: 0;
+    background: rgba(97,97,97,.9);
+    border-radius: 2px;
+    color: #fff;
+
+    &.is-visible {
+        opacity: 1;
+        bottom: 3%;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 14px;
+    }
 }
-header {
-    padding-top: 53px;
-}
-nav a {color: color('belizehole');}

@@ -1,4 +1,14 @@
-<main>
-    <p>Gulp, Browserify, Jquery, Bootstrap, Handlebars, Sass, Font Awesome are part of this setup. :)</p>
-    {{> submenu}}
+<main class="mdl-layout__content">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet content">
+        <h1>{{site.business.companyname}}</h1>
+        <h2>{{site.business.catchphrase}}</h2>
+        <p>Gulp, Browserify, Jquery, Material Design Lite, Handlebars, Sass, Font Awesome are part of this setup. :)</p>
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch">
+            <input type="checkbox" id="switch" class="mdl-switch__input" />
+            <span class="mdl-switch__label"></span>
+        </label>
+        {{> submenu}}
+    </div>
+    {{> footer}}
 </main>
+<div class="toast">I am a toast!</div>
