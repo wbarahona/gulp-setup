@@ -20,9 +20,9 @@
     </div> --}}
 </header>
 {{!-- Menu on click burger button --}}
-<div class="mdl-layout__drawer">
+<div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <span class="mdl-layout-title">{{site.business.companyname}}</span>
-    <nav class="mdl-navigation mdl-layout--small-screen-only">
+    <nav class="mdl-navigation ">
         <ul class="">
             {{#each site.menu}}
                 <li><a href="{{this.url}}" class="mdl-navigation__link">{{this.title}}</a></li>
