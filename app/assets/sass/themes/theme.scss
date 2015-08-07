@@ -35,3 +35,43 @@ main {position: relative;}
         line-height: 14px;
     }
 }
+
+//
+// Hover on round btn
+// ----------------------------------------------------------
+    .morph {
+        @include transition(all 0.25s ease-in-out);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+        i.norm {
+            @include transition(all 0.55s ease-in-out);
+            transform: translate(-12px,-12px) rotate(-360deg) ;
+            opacity: 1;
+        }
+        i.alt {
+            @include transition(all 0.45s ease-in-out);
+            transform: scale(0.5) translate(-22px,-22px) rotate(-360deg) ;
+            opacity: 0;
+        }
+
+        &:hover {
+            box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.44);
+
+            i.norm {
+                opacity: 0;
+                transform: translate(-12px,-12px) rotate(720deg) ;
+            }
+            i.alt {
+                opacity: 1;
+                transform: scale(1) translate(-12px,-12px) rotate(0deg) ;
+            }
+        }
+
+        &:active {
+            .ripple {
+                -webkit-animation: ripples 0.3s 1;
+                -moz-animation:    ripples 0.3s 1;
+                -o-animation:      ripples 0.3s 1;
+                animation:         ripples 0.3s 1;
+            }
+        }
+    }
