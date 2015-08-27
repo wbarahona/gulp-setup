@@ -7,6 +7,12 @@
             <input type="checkbox" id="switch" class="mdl-switch__input" />
             <span class="mdl-switch__label"></span>
         </label>
+        {{!-- this is for testing, remove as it should only work with either hb or ng --}}
+        <div class="angularapp-container" ng-app="myApp">
+            <div class="" ng-controller="HelloController">
+                {{test}}
+            </div>
+        </div>
         {{> submenu}}
     </div>
     {{> footer}}

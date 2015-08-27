@@ -77,7 +77,11 @@ gulp.task('scripts', function() {
     }).bundle()
     .pipe(source('scripts.min.js'))
     .pipe(buffer())
-    .pipe(uglify())
+    .pipe(uglify({options: {
+            mangle: {
+                    except: ['jQuery', 'angular']
+            }
+    }}))
     .pipe(gulp.dest(paths.dist.scripts))
     .pipe(connect.reload());
 });

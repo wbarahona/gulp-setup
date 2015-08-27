@@ -21,6 +21,7 @@
   "author": "Willmer Barahona",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.4.4",
     "bootstrap": "^3.3.5",
     "browserify": "^9.0.8",
     "browserify-shim": "^3.8.10",
@@ -46,7 +47,11 @@
     "vinyl-transform": "^1.0.0"
   },
   "browserify-shim": {
-    "jquery": "$"
+    "jquery": "$",
+    "angular": {
+      "depends": "jquery",
+      "exports": "angular"
+    }
   },
   "browserify": {
     "transform": [
@@ -54,6 +59,7 @@
     ]
   },
   "browser": {
+    "angular": "./node_modules/angular/angular.js",
     "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
     "material": "./node_modules/material-design-lite/material.js",
     "jquery": "./node_modules/jquery/dist/jquery.js"
